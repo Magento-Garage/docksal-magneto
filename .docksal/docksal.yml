@@ -1,0 +1,10 @@
+version: "2.1"
+services:
+  # Elastic Search
+  elasticsearch:
+    extends:
+      file: ${HOME}/.docksal/stacks/services.yml
+      service: elasticsearch
+  redis:
+    hostname: redis
+    image: redis:3.2.11

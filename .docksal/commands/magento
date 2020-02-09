@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+## Run magento commands in container
+##
+## Usage: fin magento
+
+# Abort if anything fails
+set -e
+
+#-------------------------- Settings --------------------------------
+
+# PROJECT_ROOT is passed from fin.
+# The following variables are configured in the '.env' file: DOCROOT, VIRTUAL_HOST.
+
+DOCROOT_PATH="${PROJECT_ROOT}/${DOCROOT}"
+BIN_PATH="${DOCROOT_PATH}/bin"
+
+cd $BIN_PATH
+fin exec php ./magento "$@"
