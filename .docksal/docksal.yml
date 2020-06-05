@@ -8,3 +8,9 @@ services:
   redis:
     hostname: redis
     image: redis:3.2.11
+  rabbitmq:
+    hostname: rabbitmq
+    image: rabbitmq:3
+    environment:
+      - RABBITMQ_DEFAULT_USER=magento
+      - RABBITMQ_DEFAULT_PASS=magento
